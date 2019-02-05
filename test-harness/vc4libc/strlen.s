@@ -24,6 +24,7 @@ count_loop:
 	bne     add_count	; no, increment the counter and the pointer
         st.s    r0,(r6+4)	; save the count for return
 	mov     r0, r1          ; return value
+	ld.s    r1,(r6+12)      ; restore the original r1, just in case
         add.m   sp,r6,#16	; restore the stack-frame
         ldm     r6,(sp++)	; restore the original r6 and sp
         rts			; return
