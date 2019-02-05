@@ -1,19 +1,7 @@
-/*#include "include/stdint.h"
+#include "include/stdint.h"
 #include "include/stdlib.h"
-#include "include/sys.h"*/
+#include "include/sys.h"
 #include "include/stdargs.h"
-
-extern int putchar(int);
-extern int strlen(char *);
-
-void putc(int c) {
-  putchar(c);
-}
-
-void puts(char *ch) {
-  while(*ch)
-    putc(*(ch++));
-}
 
 #define PARSE_NTOA_UC      1
 #define PARSE_RIGHT_ALIGN  2
@@ -171,18 +159,4 @@ void printf(const char *fmt, ...) {
   va_start(ap, fmt);
   va_printf(fmt, ap);
   va_end(ap);
-}
-
-void main() {
-  printf("test (decimal)        %u == 65535\n", 65535);
-  printf("test (hex, lowercase) %x == 7fff\n", 32767);
-  printf("test (hex, uppercase) %X == 7FFF\n", 32767);
-  printf("test (octal)          %o == 777\n", 511);
-  printf("test (binary?)        10100101101001011010010110100101 == %b\n", 0xA5A5A5A5);
-  printf("test field width      %016X == 00000000DEADBEEF\n", 0xDEADBEEF);
-  printf("string test      \"Testing\" == \"%s\"\n", "Testing");
-  printf("string, field  \"  Testing\" == \"%09s\"\n", "Testing");
-  printf("pointer: %p\n", printf);
-  printf("character  \'A\' == \'%c\'\n", 'A');
-  printf("character, field '    A' == '%05c'\n", 'A');
 }
