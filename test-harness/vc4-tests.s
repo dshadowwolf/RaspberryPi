@@ -27,4 +27,17 @@ btest_run:
 	mov r0, sr
 	add.m sp, r6, #8
 	ldm r6,pc,(sp++)
-
+	
+        .section        .text.get_status_register,"ax",@progbits
+        .p2align        1
+        .globl  get_status_register
+        .type   get_status_register, @function
+get_status_register:
+	stm r6,lr,(--sp)
+	add.m sp,sp,#-4
+	add.m r6,sp,#0
+	mov r0, sr
+	st r0, (r6)
+	add.m sp, r6, #4
+	ldm r6,pc,(sp++)
+	

@@ -8,3 +8,4 @@ void dump_bootrom();
 void dump_pll_regs();
 void range_match_test();
 void malloc_free_test();
+void dump_status_register();

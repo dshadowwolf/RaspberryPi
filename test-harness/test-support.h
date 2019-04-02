@@ -2,4 +2,5 @@
 #define __TEST_SUPPORT_H_INCLUDED__
 unsigned int get_version();
 unsigned int btest_run(unsigned int, unsigned int);
+unsigned int get_status_register();
 #endif

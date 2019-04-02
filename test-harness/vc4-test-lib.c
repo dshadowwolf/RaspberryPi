@@ -203,3 +203,9 @@ void malloc_free_test() {
   printf("buffer at %p\r\n", buff);
   free(buff);
 }
+
+void dump_status_register() {
+  volatile unsigned int sr = get_status_register();
+
+  printf(">>> retrieval of status register: %u (0x%08X)\r\n", sr);
+}

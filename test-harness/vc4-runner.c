@@ -15,6 +15,7 @@ void main() {
 
 void tests() {
   test_version();
+  dump_status_register();
   test_btest();
   dump_otp_regs();
   dump_otp_data();
